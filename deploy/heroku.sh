@@ -7,6 +7,7 @@
 # Author: vangavroche
 #
 
+PATH="heroku/bin:$PATH"
 GIT_CLEAN='n'
 GIT_COMMIT='n'
 HEROKU_CREATE='n'
@@ -85,7 +86,7 @@ if [ $HEROKU_CONFIG == "y" ]
 then
     echo "INFO: Set environment variables"
     ### Export the parameters
-    heroku config:set   TC_DB_HOST=50.17.156.219 \
+    heroku config:set   TC_DB_HOST=50.17.4.198 \
                         TC_DB_PORT=2021 \
                         TC_DB_USER=informix \
                         TC_DB_PASSWORD=1nf0rm1x \

@@ -1,25 +1,21 @@
 /*
  * Copyright (C) 2013 TopCoder Inc., All Rights Reserved.
  *
- * @version 1.2
+ * @version 1.1
  * @author vangavroche, Sky_
  * changes in 1.1:
  * - add routes for search contests
- * Changes in 1.2:
- * - add route for top
  */
 
 /* ---------------------
 routes.js 
 
 For web clients (http and https) you can define an optional RESTful mapping to help route requests to actions.
-If the client doesn't specify and action in a param, and the base route isn't a named action,
-the action will attempt to be discerned from this routes.js file.
+If the client doesn't specify and action in a param, and the base route isn't a named action, the action will attempt to be discerned from this routes.js file.
 
 - routes remain optional
-- actions defiend in params directly `action=theAction` or hitting the named URL for an action `/api/theAction`
-    will always override RESTful routing 
-- you can mix explicitly defined params with route-defined params. If there is an overlap, the route-defined params win
+- actions defiend in params directly `action=theAction` or hitting the named URL for an action `/api/theAction` will always override RESTful routing 
+- you can mix explicitly defined params with route-defined params.  If there is an overlap, the route-defined params win
   - IE: /api/user/123?userId=456 => `connection.userId = 123`
   - this is a change from previous versions
 - routes defined with the "all" method will be duplicated to "get", "put", "post", and "delete"
@@ -36,7 +32,7 @@ example:
 {
   get: [
     { path: "/users", action: "usersList" }, // (GET) /api/users
-    { path: "/search/:term/limit/:limit/offset/:offset", action: "search" }, // (GET) /api/search/car/limit/10/offset/1
+    { path: "/search/:term/limit/:limit/offset/:offset", action: "search" }, // (GET) /api/search/car/limit/10/offset/100
   ],
 
   post: [
@@ -56,10 +52,21 @@ example:
 
 exports.routes = {
     get: [
-        { path: "/:apiVersion/develop/challengetypes", action: "contestTypes" },
-        { path: "/:apiVersion/develop/challenges/:contestId", action: "getContest" },
-        { path: "/:apiVersion/develop/statistics/tops/:contestType", action: "getTops" },
-        { path: "/:apiVersion/develop/challenges", action: "searchContests" },
-        { path: "/:apiVersion/secure/challengetypes", action: "contestTypesSecured" }
+        { path: "/:apiVersion/contesttypes", action: "contestTypes" },
+        { path: "/:apiVersion/secure/contesttypes", action: "contestTypesSecured" },
+        { path: "/:apiVersion/software/contests/:contestId", action: "getContest" },
+        { path: "/:apiVersion/secure/software/contests/:contestId", action: "getContestSecured" },
+        { path: "/:apiVersion/software/contests", action: "searchContests" },
+        { path: "/:apiVersion/secure/software/contests", action: "searchContestsSecured" },
+        { path: "/:apiVersion/mockusers", action: "getUsers" },
+        { path: "/:apiVersion/secure/mockusers", action: "getUsersSecured" }
+    ],
+    post: [
+        { path: "/:apiVersion/mockusers", action: "createUser"},
+        { path: "/:apiVersion/secure/mockusers", action: "createUserSecured"}
+    ],
+    put: [
+        { path: "/:apiVersion/mockuser/:id", action: "updateUser"},
+        { path: "/:apiVersion/secure/mockuser/:id", action: "updateUserSecured"}
     ]
 };
