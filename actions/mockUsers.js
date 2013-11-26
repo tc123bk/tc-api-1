@@ -6,6 +6,10 @@
  */
 "use strict";
 
+/*
+ * These are just examples of values retrieved from database that we use for mock functions below.
+ * Please follow the correct API specification for actual tuple formats.
+ */
 var mockedUsers = [{name: "user1", email: "user1@topcoder.com"},{name: "user2", email: "user2@topcoder.com"}],
     mockedNewUser = {id: "3", name: "user3", email: "user3@topcoder.com"},
     mockedChangedUser = {id: "3", name: "newuser3", email: "user3@topcoder.com"};

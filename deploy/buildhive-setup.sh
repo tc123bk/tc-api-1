@@ -8,7 +8,7 @@
 #
 
 curl -s -o use-node https://repository-cloudbees.forge.cloudbees.com/distributions/ci-addons/node/use-node
-NODE_VERSION=0.10.4 . ./use-node
+NODE_VERSION=0.10.21 . ./use-node
 npm install
 
 # setup Heroku credentials

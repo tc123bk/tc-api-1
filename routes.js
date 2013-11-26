@@ -1,10 +1,12 @@
 /*
  * Copyright (C) 2013 TopCoder Inc., All Rights Reserved.
  *
- * @version 1.1
- * @author vangavroche, Sky_
+ * @version 1.2
+ * @author vangavroche, Sky_, Lotnok
  * changes in 1.1:
  * - add routes for search contests
+ * changes in 1.2:
+ * - add mock routes for mockUsers actions (CI integration assembly)
  */
 
 /* ---------------------

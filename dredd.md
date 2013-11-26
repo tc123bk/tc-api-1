@@ -48,14 +48,24 @@ Programmatically access TopCoder contests and members.
 
 ## Secured User Collection [/v2/secure/mockusers]
 ### List all Users [GET]
++ Request
+    + Headers
+
+            Bearer: your-access-token-here
+   
 + Response 200
 
         {}
 
 ### Create a user [POST]
 + Request (application/json)
+    + Headers
 
-        { "name": "user3", "email": "user3@topcoder.com" }
+            Bearer: your-access-token-here
+
+    + Body
+
+            { "name": "user3", "email": "user3@topcoder.com" }
 
 + Response 200
 
@@ -69,7 +79,12 @@ Programmatically access TopCoder contests and members.
 ### Update a user [PUT]
 + Request (application/json)
     + Parameters
+    
         + id (optional, string) ... ID of user in the form of a hash.
+
+    + Headers
+    
+            Bearer: your-access-token-here
 
     + Body
 

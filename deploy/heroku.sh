@@ -14,6 +14,7 @@ HEROKU_CREATE='n'
 HEROKU_PUSH='n'
 HEROKU_LAUNCH='n'
 HEROKU_CONFIG='n'
+HEROKU_APP='tc-api-heroku'
 
 for var in "$@"
 do
@@ -79,14 +80,15 @@ fi
 if [ $HEROKU_CREATE == "y" ]
 then
     echo "INFO: Create HeroKu app"
-    heroku create
+    heroku apps:destroy --confirm $HEROKU_APP
+    heroku apps:create $HEROKU_APP
 fi
 
 if [ $HEROKU_CONFIG == "y" ]
 then
     echo "INFO: Set environment variables"
     ### Export the parameters
-    heroku config:set   TC_DB_HOST=50.17.4.198 \
+    heroku config:set   TC_DB_HOST=54.204.180.183 \
                         TC_DB_PORT=2021 \
                         TC_DB_USER=informix \
                         TC_DB_PASSWORD=1nf0rm1x \
