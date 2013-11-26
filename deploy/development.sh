@@ -7,7 +7,7 @@
 # Author: vangavroche
 #
 
-export TC_DB_HOST=54.204.180.183
+export TC_DB_HOST=50.17.4.198
 export TC_DB_PORT=2021
 export TC_DB_USER=informix
 export TC_DB_PASSWORD=1nf0rm1x
