@@ -14,7 +14,7 @@ HEROKU_CREATE='n'
 HEROKU_PUSH='n'
 HEROKU_LAUNCH='n'
 HEROKU_CONFIG='n'
-HEROKU_APP='tc-api-heroku'
+HEROKU_APP='tc-api-heroku1'
 
 for var in "$@"
 do
